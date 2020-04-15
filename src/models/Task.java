@@ -14,14 +14,14 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
     @NamedQuery(
-            name="getAllMessages",
-            query="SELECT m FROM Message AS m ORDER BY m.id DESC"
+            name="getAllTasks",
+            query="SELECT m FROM Task AS m ORDER BY m.id DESC"
             )
 })
-@Table(name="messages")
-public class Message {
+@Table(name="tasks")
+public class Task {
     @Id
-    @Column(name ="Id")
+    @Column(name ="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
@@ -65,7 +65,7 @@ public class Message {
         return created_at;
     }
 
-    public void setcreated_at(Timestamp created_at){
+    public void setCreated_at(Timestamp created_at){
         this.created_at=created_at;
     }
 
